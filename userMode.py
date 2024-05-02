@@ -1,5 +1,6 @@
 from script import connect_to_gmailAPI, create_message_with_eml, send_message, convert_CSV_Tolist
 import time
+import random
 
 def MailSender(sender_name, sender_email, eml_file_path, recipeints):
     sender = sender_name + " <" + sender_email + ">"
@@ -11,7 +12,7 @@ def MailSender(sender_name, sender_email, eml_file_path, recipeints):
         send_message(service, 'me', message)
         print("\033[92mEmail", idx+1, "sent successfully to", recipient, "\033[0m")
         print()
-        time.sleep(1)
+        time.sleep(random.randint(1, 3))
     print("===============================================")
 
 
